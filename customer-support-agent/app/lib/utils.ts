@@ -1,15 +1,16 @@
 import {
-  BedrockAgentRuntimeClient,
+  BedrockRuntimeClient,
   RetrieveCommand,
   RetrieveCommandInput,
-} from "@aws-sdk/client-bedrock-agent-runtime";
+  InvokeModelCommand,
+} from "@aws-sdk/client-bedrock-runtime";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 console.log("🔑 Have AWS AccessKey?", !!process.env.BAWS_ACCESS_KEY_ID);
 console.log("🔑 Have AWS Secret?", !!process.env.BAWS_SECRET_ACCESS_KEY);
 
-const bedrockClient = new BedrockAgentRuntimeClient({
+const bedrockClient = new BedrockRuntimeClient({
   region: "us-east-1", // Make sure this matches your Bedrock region
   credentials: {
     accessKeyId: process.env.BAWS_ACCESS_KEY_ID!,
