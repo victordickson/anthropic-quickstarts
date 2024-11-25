@@ -1,7 +1,5 @@
 import {
   BedrockRuntimeClient,
-  RetrieveCommand,
-  RetrieveCommandInput,
   InvokeModelCommand,
 } from "@aws-sdk/client-bedrock-runtime";
 import { type ClassValue, clsx } from "clsx";
